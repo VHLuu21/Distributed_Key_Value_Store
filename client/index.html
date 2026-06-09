@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distributed KV Store Client</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>Distributed KV Store</h1>
+            <p>Giao diện Client tương tác với hệ thống Key-Value</p>
+        </div>
+
+        <!-- GET All Data (Snapshot) -->
+        <div class="card">
+            <h2><span class="badge-snapshot">SNAPSHOT</span> Lấy Toàn Bộ Dữ Liệu</h2>
+            <p style="color: var(--text-muted); margin-bottom: 1rem; font-size: 0.875rem;">Lấy toàn bộ Key-Value hiện có trên hệ thống.</p>
+            <button class="btn-snapshot" onclick="getSnapshot()">Lấy Toàn Bộ Dữ Liệu</button>
+            <div id="snapshot-response" class="response-area"></div>
+        </div>
+
+        <!-- POST Data -->
+        <div class="card">
+            <h2><span class="badge-post">POST</span> Thêm Dữ liệu</h2>
+            <div class="flex-row">
+                <div class="form-group">
+                    <label for="post-key">Key</label>
+                    <input type="text" id="post-key" placeholder="Nhập key...">
+                </div>
+                <div class="form-group">
+                    <label for="post-value">Value</label>
+                    <input type="text" id="post-value" placeholder="Nhập value...">
+                </div>
+            </div>
+            <button onclick="postData()">Lưu Dữ Liệu</button>
+            <div id="post-response" class="response-area"></div>
+        </div>
+
+        <!-- GET Data -->
+        <div class="card">
+            <h2><span class="badge-get">GET</span> Lấy Dữ liệu</h2>
+            <div class="form-group">
+                <label for="get-key">Key</label>
+                <input type="text" id="get-key" placeholder="Nhập key cần lấy...">
+            </div>
+            <button class="btn-get" onclick="getData()">Lấy Dữ Liệu</button>
+            <div id="get-response" class="response-area"></div>
+        </div>
+
+        <!-- DELETE Data -->
+        <div class="card">
+            <h2><span class="badge-delete">DELETE</span> Xóa Dữ liệu</h2>
+            <div class="form-group">
+                <label for="delete-key">Key</label>
+                <input type="text" id="delete-key" placeholder="Nhập key cần xóa...">
+            </div>
+            <button class="btn-delete" onclick="deleteData()">Xóa Dữ Liệu</button>
+            <div id="delete-response" class="response-area"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
